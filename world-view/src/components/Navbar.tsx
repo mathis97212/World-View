@@ -6,22 +6,19 @@ const Navbar = () => {
     const [query, setQuery] = useState('')
     return(
         <nav className="fixed w-full h-24 shadow-xl bg-white">
-        <div className="flex justify-between items-center h-full w-full px-4 2xl:px-16">
-          <div className="text-2xl">🌍</div>
+        <div className="flex justify-between items-center h-full w-full px-4 2xl:px-16">                
+          <Link href="/home">
+            <h1 className="ml-10 uppercase hover:border-b">Home</h1>
+          </Link>
 
           <div>
-            <ul className="flex">
-                <Link href="/home">
-                    <li className="ml-10 uppercase hover:border-b">Home</li>
-                </Link>
-                <label className="ml-10 uppercase">Search</label>
-                <input className="ml-2" type="text" onChange={ e => setQuery(e.target.value)} />
+            <ul>
+                <input className="ml-2 border" type="text" onChange={ e => setQuery(e.target.value)} placeholder="Search" />
             </ul>
           </div>
-
         </div>
       </nav>
-    )
-}
+    );
+};
 
 export default Navbar
