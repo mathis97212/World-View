@@ -14,11 +14,11 @@ export default async function Home() {
   return (
     <>
       <Navbar />
-      <section className="flex">
-            {data.map((d, index) => (
-                <CountryCard key={index} countries={d} />
-            ))}
-        </section>
+        <body>
+          {data.map((d, index) => (
+                  <CountryCard key={index} countries={d} />
+              ))}
+        </body>
     </>
   );
 };

@@ -3,12 +3,11 @@ import React from "react";
 import { useState } from "react";
 
 const CountryCard = ({ countries }) => {
-    console.log(countries)
   return (
     <li>
-      <a href={`/country/${countries.ccn3}`}>
+      <Link href={`${countries.ccn3}`}>
         {countries.name.common}
-      </a>
+      </Link>
     </li>
   );
 };
