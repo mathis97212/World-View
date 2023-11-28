@@ -4,6 +4,7 @@ import { Inter } from "next/font/google"
 import Navbar from "@/components/Navbar"
 import CountryCard from "@/components/CountryCard";
 import { apiURL } from "@/utils/api";
+import { useState } from "react";
 
 export default async function Home() {
 
