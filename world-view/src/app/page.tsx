@@ -1,25 +1,34 @@
 'use client'
-import Head from "next/head"
-import { Inter } from "next/font/google"
-import Navbar from "@/components/Navbar"
+import React from "react";
+import Head from "next/head";
+import Navbar from "@/components/Navbar";
 import CountryCard from "@/components/CountryCard";
-import { apiURL } from "@/utils/api";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { fetchCountryData } from "@/services/Users/UsersService";
 
-export default async function Home() {
+export default function Home() {
+  const [data, setData] = useState([]);
 
-  const res = await fetch(apiURL)
-  const data = await res.json();
+  
 
+  useEffect(() => {
+    fetchCountryData().then((countries) => {
+      const sortedCountries = countries.sort((a, b) =>
+        a.name.common.localeCompare(b.name.common)
+      );
+
+      setData(sortedCountries);
+    });
+  }, []);
 
   return (
     <>
       <Navbar />
-        <body>
-          {data.map((d, index) => (
-                  <CountryCard key={index} countries={d} />
-              ))}
-        </body>
+      <div>
+        {data && data.map((d, index) => (
+          <CountryCard key={index} countries={d} />
+        ))}
+      </div>
     </>
   );
-};
+}

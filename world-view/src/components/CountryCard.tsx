@@ -5,7 +5,7 @@ import { useState } from "react";
 const CountryCard = ({ countries }) => {
   return (
     <div className="country_card">
-      <Link href={`/country/${countries.ccn3}`}>
+      <Link href={`/detail/${countries.ccn3}`}>
         {countries.name.common}
       </Link>
       <div>
