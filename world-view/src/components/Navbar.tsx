@@ -21,7 +21,7 @@ const Navbar = () => {
           <div>
             <ul>
               <div className="Search">
-                <SearchInput onSearch={GetCountryByName}/>
+                <SearchInput onSearch/>
               </div>
             </ul>
           </div>

@@ -3,7 +3,8 @@ import React from "react";
 import Head from "next/head";
 import Navbar from "@/components/Navbar";
 import CountryCard from "@/components/CountryCard";
-import { useEffect, useState } from "react";
+import { useEffect} from "react";
+import { useState } from "react";
 import { fetchCountryData } from "@/services/Users/UsersService";
 
 export default function Home() {
