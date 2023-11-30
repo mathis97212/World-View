@@ -5,6 +5,6 @@ export const fetchCountryData = async() => {
 }
 
 export const fetchOneCountryData = async() => {
-    return await api.get(`v3.1/${ccn3}`).then((response) => response.data)
+    return await api.get(`v3.1/alpha/{code}`).then((response) => response.data)
 }
 
