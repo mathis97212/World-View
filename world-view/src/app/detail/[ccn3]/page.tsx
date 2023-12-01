@@ -1,4 +1,5 @@
 'use client'
+import CountryCard from "@/components/CountryCard";
 import { fetchCountryData, fetchOneCountryData } from "@/services/Users/UsersService";
 import { useEffect, useState } from "react";
 import React from "react";
@@ -15,17 +16,12 @@ export default function Page({ params }: { params: { ccn3: string } }) {
   if (!data) {
     return <div>Loading...</div>;
   }
+  console.log(data)
 
   return (
     <>
       <div className="country_card">
-        <div>
-          <img src={data.flags.png} alt={`Drapeau de ${data.name.common}`} />
-        </div>
-        <div>
-          {data.name.common}
-          <p>Nom commun : {data.name.common}</p>
-        </div>
+        <CountryCard country={data}/>
       </div>
     </>
   );

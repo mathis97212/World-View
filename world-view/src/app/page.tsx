@@ -2,7 +2,7 @@
 import React from "react";
 import Head from "next/head";
 import Navbar from "@/components/Navbar";
-import CountryCard from "@/components/CountryCard";
+import AllCountryCard from "@/components/AllCountryCard";
 import { useEffect} from "react";
 import { useState } from "react";
 import { fetchCountryData } from "@/services/Users/UsersService";
@@ -27,7 +27,7 @@ export default function Home() {
       <Navbar />
       <div>
         {data && data.map((d, index) => (
-          <CountryCard key={index} countries={d} />
+          <AllCountryCard key={index} countries={d} />
         ))}
       </div>
     </>
