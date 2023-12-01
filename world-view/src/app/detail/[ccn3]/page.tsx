@@ -1,11 +1,12 @@
 'use client'
 import CountryCard from "@/components/CountryCard";
+import Navbar from "@/components/Navbar";
 import { fetchCountryData, fetchOneCountryData } from "@/services/Users/UsersService";
 import { useEffect, useState } from "react";
 import React from "react";
 
 export default function Page({ params }: { params: { ccn3: string } }) {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState();
 
   useEffect(() => {
     fetchOneCountryData(params.ccn3).then((country) => {
@@ -16,12 +17,18 @@ export default function Page({ params }: { params: { ccn3: string } }) {
   if (!data) {
     return <div>Loading...</div>;
   }
-  console.log(data)
 
   return (
     <>
-      <div className="country_card">
-        <CountryCard country={data}/>
+    <div>
+      <Navbar />
+    </div>
+      <div>
+        <ul className="country_card">
+        {data && data.map((d, index) => (
+          <CountryCard key={index} country={d} />
+        ))}
+        </ul>
       </div>
     </>
   );
