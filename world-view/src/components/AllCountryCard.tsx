@@ -4,13 +4,15 @@ import { useState } from "react";
 
 const AllCountryCard = ({ countries }) => {
   return (
-    <div className="country_card">
-      <div>
+    <div className="bg-white p-4 shadow-md mb-4">
+      <div className="flex justify-center items-center mb-4">
         <img src={countries.flags.png} alt="" />
+      </div >
+      <div className="text-center font-mono text-xl">
+        <Link href={`/detail/${countries.ccn3}`}>
+          {countries.name.common}
+        </Link>
       </div>
-      <Link href={`/detail/${countries.ccn3}`}>
-        {countries.name.common}
-      </Link>
     </div>
   );
 };

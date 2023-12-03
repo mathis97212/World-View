@@ -24,11 +24,16 @@ export default function Home() {
 
   return (
     <>
-      <Navbar />
       <div>
-        {data && data.map((d, index) => (
-          <AllCountryCard key={index} countries={d} />
-        ))}
+        <div className="pb-20">
+          <Navbar />
+        </div>
+        
+        <div className="py-20 grid gap-4 grid-cols-3 grid-rows-3 ">
+          {data && data.map((d, index) => (
+            <AllCountryCard key={index} countries={d} />
+          ))}
+        </div>
       </div>
     </>
   );

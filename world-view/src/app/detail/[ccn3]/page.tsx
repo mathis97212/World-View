@@ -20,11 +20,11 @@ export default function Page({ params }: { params: { ccn3: string } }) {
 
   return (
     <>
-    <div>
+    <div className="pb-20">
       <Navbar />
-    </div>
+    </div >
       <div>
-        <ul className="country_card">
+        <ul className="country_card py-20">
         {data && data.map((d, index) => (
           <CountryCard key={index} country={d} />
         ))}
