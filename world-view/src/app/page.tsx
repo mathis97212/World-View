@@ -7,6 +7,7 @@ import { useEffect} from "react";
 import { useState } from "react";
 import { fetchCountryData } from "@/services/Users/UsersService";
 
+
 export default function Home() {
   const [data, setData] = useState([]);
 
