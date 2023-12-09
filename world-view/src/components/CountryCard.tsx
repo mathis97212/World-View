@@ -42,6 +42,15 @@ const CountryCard = ({ country }) => {
     demonyms += ' / ' + names.m;
   });
 
+  const gini_list = [];
+  for (const key in country.gini) {
+    gini_list.push(country.gini[key]);
+  }
+  let gini = '';
+  gini_list.map((names) => {
+    gini += names;
+  });
+
   return (
     <div className="bg-white p-4 shadow-md mb-4">
       <div className="flex justify-center items-center mb-4">
@@ -56,7 +65,7 @@ const CountryCard = ({ country }) => {
         </div>
         <div className="flex">
           <div className="font-bold px-10">
-            <h1>Latitude longitude</h1>
+            <h1>Les noms commun et natif</h1>
           </div>
           <div>
             <li>
@@ -67,7 +76,7 @@ const CountryCard = ({ country }) => {
 
         <div className="flex">
           <div className="font-bold px-10">
-            <h1>La superficie</h1>
+            <h1>Les noms officiels</h1>
           </div>
           <div>
             <li>
@@ -188,7 +197,7 @@ const CountryCard = ({ country }) => {
           </div>
           <div>
             <li>
-              <p>DQZDQZDQZDQZ</p>
+              <p>{country.population}</p>
             </li>
           </div>
         </div>
@@ -210,7 +219,7 @@ const CountryCard = ({ country }) => {
           </div>
           <div>
             <li>
-              <p>DQZDQZDQZDQZ</p>
+              <p>{gini}</p>
             </li>
           </div>
         </div>
