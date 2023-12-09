@@ -51,6 +51,15 @@ const CountryCard = ({ country }) => {
     gini += names;
   });
 
+  const borders_list = [];
+  for (const key in country.borders) {
+    borders_list.push(country.borders[key]);
+  }
+  let borders = '';
+  borders_list.map((names) => {
+    borders += ' / ' + names;
+  });
+
   return (
     <div className="bg-white p-4 shadow-md mb-4">
       <div className="flex justify-center items-center mb-4">
@@ -69,7 +78,7 @@ const CountryCard = ({ country }) => {
           </div>
           <div>
             <li>
-              <p>{commonnames}</p>
+            {commonnames ? <p>{commonnames}</p> : <p>None</p>}
             </li>
           </div>
         </div>
@@ -80,7 +89,7 @@ const CountryCard = ({ country }) => {
           </div>
           <div>
             <li>
-              <p>{officialnames}</p>
+            {officialnames ? <p>{officialnames}</p> : <p>None</p>}
             </li>
           </div>
         </div>
@@ -107,7 +116,7 @@ const CountryCard = ({ country }) => {
           </div>
           <div>
             <li>
-              <p>DQZDQZDQZDQZ</p>
+              <p>{country.latlng[0]}, {country.latlng[1]}</p>
             </li>
           </div>
         </div>
@@ -118,29 +127,29 @@ const CountryCard = ({ country }) => {
           </div>
           <div>
             <li>
-              <p>DQZDQZDQZDQZ</p>
+              <p>{country.area}</p>
             </li>
           </div>
         </div>
 
         <div className="flex">
           <div className="font-bold px-10">
-            <h1>DQZDQZDQZD</h1>
+            <h1>les pays en bordure</h1>
           </div>
           <div>
             <li>
-              <p>DZQDZQDQZDQZ</p>
+            {borders ? <p>{borders}</p> : <p>None</p>}
             </li>
           </div>
         </div>
 
         <div className="flex">
           <div className="font-bold px-10">
-            <h1>la région et sous-région</h1>
+            <h1>Region</h1>
           </div>
           <div>
             <li>
-              <p>DZQDZQDQZDQZ</p>
+            {country.subregion ? <p>{country.region}, {country.subregion}</p> : <p>{country.region}</p>}
             </li>
           </div>
         </div>
@@ -157,7 +166,7 @@ const CountryCard = ({ country }) => {
           </div>
           <div>
             <li>
-              <p>{country.capital}</p>
+              {country.capital ? <p>{country.capital}</p> : <p>None</p>}
             </li>
           </div>
         </div>
@@ -193,7 +202,7 @@ const CountryCard = ({ country }) => {
 
         <div className="flex">
           <div className="font-bold px-10">
-            <h1>le nombre d'habitants</h1>
+            <h1>Population</h1>
           </div>
           <div>
             <li>
@@ -204,22 +213,22 @@ const CountryCard = ({ country }) => {
 
         <div className="flex">
           <div className="font-bold px-10">
-            <h1>les devises du pays</h1>
+            <h1>Currencies</h1>
           </div>
           <div>
             <li>
-              <p>{currency}</p>
+            {currency ? <p>{currency}</p> : <p>None</p>}
             </li>
           </div>
         </div>
 
         <div className="flex">
           <div className="font-bold px-10">
-            <h1>le coefficient GINI du pays </h1>
+            <h1>GINI coefficient</h1>
           </div>
           <div>
             <li>
-              <p>{gini}</p>
+              {gini ? <p>{gini}</p> : <p>None</p>}
             </li>
           </div>
         </div>
@@ -237,7 +246,7 @@ const CountryCard = ({ country }) => {
           </div>
           <div>
             <li>
-              <p>{language}</p>
+            {language ? <p>{language}</p> : <p>None</p>}
             </li>
           </div>
         </div>
