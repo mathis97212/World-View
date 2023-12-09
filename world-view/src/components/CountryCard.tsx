@@ -32,7 +32,15 @@ const CountryCard = ({ country }) => {
     currency += ' / ' + names.name;
   });
 
-
+  const demonyms_list = [];
+  for (const key in country.demonyms) {
+    demonyms_list.push(country.demonyms[key]);
+  }
+  let demonyms = '';
+  demonyms_list.map((names) => {
+    demonyms += ' / ' + names.f;
+    demonyms += ' / ' + names.m;
+  });
 
   return (
     <div className="bg-white p-4 shadow-md mb-4">
@@ -191,7 +199,7 @@ const CountryCard = ({ country }) => {
           </div>
           <div>
             <li>
-              <p>DQZDQZDQZDQZ</p>
+              <p>{currency}</p>
             </li>
           </div>
         </div>
@@ -227,11 +235,11 @@ const CountryCard = ({ country }) => {
 
         <div className="flex">
           <div className="font-bold px-10">
-            <h1>les devises du pays</h1>
+            <h1>les gentilés du pays</h1>
           </div>
           <div>
             <li>
-              <p>{currency}</p>
+              <p>{demonyms}</p>
             </li>
           </div>
         </div>
