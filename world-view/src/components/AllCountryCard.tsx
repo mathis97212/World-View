@@ -9,8 +9,11 @@ const AllCountryCard = ({ countries }) => {
         <img src={countries.flags.png} alt="" />
       </div >
       <div className="text-center font-mono text-xl">
+      {countries.name.common}
+      </div>
+      <div className="text-center font-mono text-sm">
         <Link href={`/detail/${countries.ccn3}`}>
-          {countries.name.common}
+          Learn more
         </Link>
       </div>
     </div>

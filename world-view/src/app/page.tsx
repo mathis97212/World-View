@@ -10,8 +10,6 @@ import { fetchCountryData } from "@/services/Users/UsersService";
 export default function Home() {
   const [data, setData] = useState([]);
 
-  
-
   useEffect(() => {
     fetchCountryData().then((countries) => {
       const sortedCountries = countries.sort((a, b) =>
@@ -30,7 +28,7 @@ export default function Home() {
         </div>
         
         <div className="py-20 grid gap-4 grid-cols-3 grid-rows-3 ">
-          {data && data.map((d, index) => (
+          {data.map((d, index) => (
             <AllCountryCard key={index} countries={d} />
           ))}
         </div>
