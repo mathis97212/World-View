@@ -27,7 +27,7 @@ export default function Page({ params }: { params: { ccn3: string } }) {
     </div >
       <div>
         <ul className="country_card py-20">
-        {data && data.map((d, index) => (
+        {data.map((d, index) => (
           <CountryCard key={index} country={d} />
         ))}
         </ul>

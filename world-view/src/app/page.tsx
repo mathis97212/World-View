@@ -24,12 +24,6 @@ export default function Home() {
   const handleNewData = (newData) => {
     setData(newData)
 
-  if (!data) {
-    return <div className="text-gray-900 fond-bold uppercase tracking-wide flex items-center justify-center text-center h-screen text4xl">
-      No country found...
-      </div>;
-  }
-
   }
   return (
     <>
@@ -39,9 +33,13 @@ export default function Home() {
         </div>
         
         <div className="py-20 grid gap-4 grid-cols-3 grid-rows-3 ">
-          {data.map((d, index) => (
+          {data.map ? data.map((d, index) => (
             <AllCountryCard key={index} countries={d} />
-          ))}
+          )) : 
+          <div className="text-gray-900 fond-bold uppercase items-center justify-center text-center h-screen text4xl">
+            No country found...
+          </div>
+          }
         </div>
       </div>
     </>
