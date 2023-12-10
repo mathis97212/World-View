@@ -21,11 +21,21 @@ export default function Home() {
     });
   }, []);
 
+  const handleNewData = (newData) => {
+    setData(newData)
+
+  if (!data) {
+    return <div className="text-gray-900 fond-bold uppercase tracking-wide flex items-center justify-center text-center h-screen text4xl">
+      No country found...
+      </div>;
+  }
+
+  }
   return (
     <>
       <div>
         <div className="pb-20">
-          <Navbar />
+          <Navbar searchData={handleNewData}/>
         </div>
         
         <div className="py-20 grid gap-4 grid-cols-3 grid-rows-3 ">

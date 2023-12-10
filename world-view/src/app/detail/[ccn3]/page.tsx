@@ -15,7 +15,9 @@ export default function Page({ params }: { params: { ccn3: string } }) {
   }, [params.ccn3]);
 
   if (!data) {
-    return <div>Loading...</div>;
+    return <div className="text-gray-900 fond-bold uppercase tracking-wide flex items-center justify-center text-center h-screen text4xl">
+      Loading...
+      </div>;
   }
 
   return (

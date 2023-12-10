@@ -1,8 +1,7 @@
 import React from "react";
 
 const CountryCard = ({ country }) => {
-  console.log(country);
-
+  
   const nativenames = [];
   for (const key in country.name.nativeName) {
     nativenames.push(country.name.nativeName[key]);
@@ -74,7 +73,7 @@ const CountryCard = ({ country }) => {
         </div>
         <div className="flex">
           <div className="font-bold px-10">
-            <h1>Les noms commun et natif</h1>
+            <h1>Common names</h1>
           </div>
           <div>
             <li>
@@ -85,7 +84,7 @@ const CountryCard = ({ country }) => {
 
         <div className="flex">
           <div className="font-bold px-10">
-            <h1>Les noms officiels</h1>
+            <h1>Official names</h1>
           </div>
           <div>
             <li>
@@ -96,7 +95,7 @@ const CountryCard = ({ country }) => {
 
         <div className="flex">
           <div className="font-bold px-10">
-            <h1>le tld</h1>
+            <h1>tld</h1>
           </div>
           <div>
             <li>
@@ -123,7 +122,7 @@ const CountryCard = ({ country }) => {
 
         <div className="flex">
           <div className="font-bold px-10">
-            <h1>La superficie</h1>
+            <h1>Area</h1>
           </div>
           <div>
             <li>
@@ -134,7 +133,7 @@ const CountryCard = ({ country }) => {
 
         <div className="flex">
           <div className="font-bold px-10">
-            <h1>les pays en bordure</h1>
+            <h1>Bordering countries</h1>
           </div>
           <div>
             <li>
@@ -162,7 +161,7 @@ const CountryCard = ({ country }) => {
 
         <div className="flex">
           <div className="font-bold px-10">
-            <h1>la capitale du pays</h1>
+            <h1>Capital</h1>
           </div>
           <div>
             <li>
@@ -173,7 +172,7 @@ const CountryCard = ({ country }) => {
 
         <div className="flex">
           <div className="font-bold px-10">
-            <h1>est-ce que le pays est indépendant</h1>
+            <h1>Indepedent</h1>
           </div>
           <div>
             <li>
@@ -184,7 +183,7 @@ const CountryCard = ({ country }) => {
 
         <div className="flex">
           <div className="font-bold px-10">
-            <h1>est-ce que le pays est membre de l'UN</h1>
+            <h1>Member of UN</h1>
           </div>
           <div>
             <li>
@@ -242,7 +241,7 @@ const CountryCard = ({ country }) => {
 
         <div className="flex">
           <div className="font-bold px-10">
-            <h1>les langages du pays</h1>
+            <h1>Languages</h1>
           </div>
           <div>
             <li>
@@ -253,7 +252,7 @@ const CountryCard = ({ country }) => {
 
         <div className="flex">
           <div className="font-bold px-10">
-            <h1>les gentilés du pays</h1>
+            <h1>Demonyms</h1>
           </div>
           <div>
             <li>
