@@ -1,10 +1,11 @@
+import { ICountry } from "@/shared/interfaces";
 import Link from "next/link";
 import React from "react";
 import { useState } from "react";
 
-const AllCountryCard = ({ countries }) => {
+const AllCountryCard = ({ countries }: ICountry[]) => {
   return (
-    <div className="bg-white p-4 shadow-md mb-4 h-full">
+    <div className="bg-white p-4 shadow-md mb-4 ">
       <div className="flex justify-center items-center mb-4">
         <img src={countries.flags.png} alt="" />
       </div >

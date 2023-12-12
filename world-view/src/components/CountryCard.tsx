@@ -1,6 +1,8 @@
+import { ICountry } from "@/shared/interfaces";
 import React from "react";
 
-const CountryCard = ({ country }) => {
+
+const CountryCard = ({ country }: ICountry[] ) => {
   
   const nativenames = [];
   for (const key in country.name.nativeName) {

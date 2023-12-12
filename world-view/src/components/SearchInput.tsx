@@ -1,6 +1,9 @@
+import { ICountry } from "@/shared/interfaces";
 import React, { useState } from "react";
 
-const SearchInput = ({ onDataReceived }) => {
+
+
+const SearchInput = ({ onDataReceived }: ICountry) => {
   const [searchText, setSearchText] = useState("");
 
   async function searchCountry() {
