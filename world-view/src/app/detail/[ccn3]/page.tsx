@@ -23,7 +23,7 @@ export default function Page({ params }: { params: { ccn3: string } }) {
   return (
     <>
     <div className="pb-20">
-      <Navbar />
+      <Navbar searchData=""/>
     </div >
       <div>
         <ul className="country_card py-20">

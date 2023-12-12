@@ -4,7 +4,7 @@ import { useState } from "react";
 
 const AllCountryCard = ({ countries }) => {
   return (
-    <div className="bg-white p-4 shadow-md mb-4">
+    <div className="bg-white p-4 shadow-md mb-4 h-full">
       <div className="flex justify-center items-center mb-4">
         <img src={countries.flags.png} alt="" />
       </div >

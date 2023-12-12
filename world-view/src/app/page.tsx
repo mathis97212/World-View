@@ -32,7 +32,7 @@ export default function Home() {
           <Navbar searchData={handleNewData}/>
         </div>
         
-        <div className="py-20 grid gap-4 grid-cols-3 grid-rows-3 ">
+        <div className="display: flex py-20 grid gap-4 grid-cols-3 grid-rows-3 ">
           {data.map ? data.map((d, index) => (
             <AllCountryCard key={index} countries={d} />
           )) : 

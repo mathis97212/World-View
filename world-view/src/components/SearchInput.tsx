@@ -22,7 +22,7 @@ const SearchInput = ({ onDataReceived }) => {
   }
 
   return (
-    <form onSubmit={handleSearchCountry}>
+    <form onSubmit={handleSearchCountry} className="">
       <input
         type="search"
         placeholder="Search a country..."
